@@ -13,38 +13,44 @@ class SlideItem extends StatelessWidget {
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
-        height: 380.0,
+        height: 360.0,
         decoration: BoxDecoration(
             boxShadow: [
-              BoxShadow(color: Colors.white, blurRadius: 5.0, spreadRadius: 5.0)
+              BoxShadow(color: Colors.white)
             ],
             borderRadius: BorderRadius.all(
-              Radius.circular(8.0),
+              Radius.circular(6),
             ),
-            border: Border.all(color: Colors.grey)),
+            border: Border.all(color: Colors.grey.shade200)),
         child: Column(
           children: <Widget>[
-            Image(
-              image: AssetImage(slideList[index].imageUrl),
-              width: double.infinity,
-              height: 250.0,
-              fit: BoxFit.fill,
+            ClipRRect(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(6),topRight: Radius.circular(6)),
+              child: Image(
+                image: AssetImage(slideList[index].imageUrl),
+                width: double.infinity,
+                height: 240.0,
+                fit: BoxFit.fill,
+                
+              ),
             ),
             SizedBox(
               width: double.infinity,
-              height: 8.0,
+              height: 10.0,
             ),
-            TitleTextWidget(
-              alignment: Alignment.centerLeft,
+            HeaderTextWidget(
               label: slideList[index].title,
-              fontSize: 18.0,
             ),
-            SubTitleText(
+            SizedBox(
+              width: double.infinity,
+              height: 5.0,
+            ),
+            SubHeaderText(
               lable: slideList[index].desc,
             ),
             SizedBox(
               width: double.infinity,
-              height: 25.0,
+              height: 0.0,
             ),
           ],
         ),

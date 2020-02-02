@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:mutual_fund_app/constants.dart';
 
-class TitleTextWidget extends StatelessWidget {
-  final Alignment alignment;
+class HeaderTextWidget extends StatelessWidget {
   final String label;
-  final double fontSize;
 
-  TitleTextWidget(
-      {@required this.alignment,
-        @required this.label,
-        @required this.fontSize});
+  HeaderTextWidget(
+      {@required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: alignment,
+      alignment: Alignment.centerLeft,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
+        padding: const EdgeInsets.fromLTRB(24.0, 8.0, 16.0, 5.0),
         child: Text(
           label,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: fontSize,
-            fontWeight: FontWeight.bold,
-          ),
-          textAlign: TextAlign.left,
+          textAlign:TextAlign.left,
+          style: kHeaderTextStyle,
         ),
       ),
     );
